@@ -4,8 +4,8 @@ import os
 import asyncio
 
 # Authorized user IDs
-AUTHORIZED_USERS = [1059096280]
-TARGET_USER_ID = 1059096280
+AUTHORIZED_USERS = [your_id]
+TARGET_USER_ID = your_id
 COOKIES_STATUS_FILE = "cookies_status.txt"
 LAST_STATUS = None
 GRADE_SELECTION = {}
@@ -120,7 +120,7 @@ async def monitor_cookies_status(application):
 
 # Main function to set up the bot
 def main():
-    application = ApplicationBuilder().token("7552852034:AAHElE-mJ8-3Q3BIslPBn5nX0yhbfhnjSEw").build()
+    application = ApplicationBuilder().token("BOT_TOKEN").build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("rem", rem))
