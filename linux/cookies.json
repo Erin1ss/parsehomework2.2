@@ -1,0 +1,150 @@
+[
+    {
+        "domain": "ms-edu.tatar.ru",
+        "httpOnly": false,
+        "name": "JSESSIONID",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "node0zjfmvpflkbsdn3m4j4xe47kb3864761.node0"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1737590728,
+        "httpOnly": false,
+        "name": "_ym_isad",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "2"
+    },
+    {
+        "domain": "ms-edu.tatar.ru",
+        "expiry": 1769054728,
+        "httpOnly": false,
+        "name": "_ymab_param",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "DYbEosY0j2tly60y5JYoAFJ4LmhNbv80ayv8OYpiF47q8shJD4bEN2pYaKK60kL-UvXni9ahC_i8uxnIbmXQLMwIsBE"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1769054727,
+        "httpOnly": false,
+        "name": "_ym_d",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "1737518728"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1737605119,
+        "httpOnly": false,
+        "name": "user_login",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": ""
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1737777923,
+        "httpOnly": false,
+        "name": "aupd_token",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyMDkwNzEwIiwic2NwIjoib3BlbmlkIHByb2ZpbGUiLCJtc2giOiI2NjUzNGYzYS04MTU5LTQ4OGQtOGY0Yi00ZTEwYzM4ZjgxOTUiLCJpc3MiOiJodHRwczpcL1wvbXMtZWR1LnRhdGFyLnJ1Iiwicm9sIjoiIiwic3NvIjoiNmM3NzRjYjQ3OGU2MWRiMTdkNTQ0ZWZiMWVkZDk1MjkiLCJhdWQiOiIyOjEiLCJuYmYiOjE3Mzc1MTg3MjQsImF0aCI6ImthdXRoIiwicmxzIjoiezE6WzIwOjI6W10sMzA6NDpbXSw0MDoxOltdLDE4MzoxNjpbXSwyMTE6MTk6W10sNTMzOjQ4OltdXX0iLCJyZ24iOiIxNiIsImV4cCI6MTczODM4MjcxOSwiaWF0IjoxNzM3NTE4NzI0LCJqdGkiOiJkZWM0MDc5ZS1hOTJjLTQzMzAtODQwNy05ZWE5MmNmMzMwMzkifQ.JzbtTZwRYVoz0sS2S_9gDL9hKnJJpuv4wODRB9urjQZeJKumLs0VHeibQcuo_UZVLZSIYfVATdHSvyk_VdPOzA1NZhQTI9lKNq7sUiYUiWRVI2a3wBgxRVBuqJ4qd0gzF8t8ce_fgzV6YW12P9RfcPcCSDLS8IU8BO9vYdfAOaNBwhfRSIkVmi-K6WsH4ei7JON2bSr2KSvKow971f2Ks5a6h9dpj31XcGd4KrGwSnb0Z81A9j6umecqDLDx_n9hwbWyekKsb6OCL0AMbLCPcr_GTq6KZRLvE1wJRMNtP-LBtU5LBBknd0BYVzP67vavxikCKDmSrbMAt04DJxmgLw"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1766289928,
+        "httpOnly": false,
+        "name": "tmr_lvidTS",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "1737518728096"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1766289928,
+        "httpOnly": false,
+        "name": "tmr_lvid",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "5e42bfba66f5d38b46d11873ef878221"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1738382723,
+        "httpOnly": false,
+        "name": "aupd_current_role",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "2:1"
+    },
+    {
+        "domain": "ms-edu.tatar.ru",
+        "httpOnly": false,
+        "name": "active_student",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "86654"
+    },
+    {
+        "domain": "ms-edu.tatar.ru",
+        "expiry": 1738123529,
+        "httpOnly": false,
+        "name": "domain_sid",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "Ol6yPDUoMZhhxFA_GBs7T%3A1737518729807"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1737605123,
+        "httpOnly": false,
+        "name": "cluster",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": ""
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1737605123,
+        "httpOnly": false,
+        "name": "subsystem_id",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "2"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1769054727,
+        "httpOnly": false,
+        "name": "_ym_uid",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "1737518728227423914"
+    },
+    {
+        "domain": ".tatar.ru",
+        "expiry": 1737605123,
+        "httpOnly": false,
+        "name": "obr_id",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "2090710"
+    }
+]
