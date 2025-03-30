@@ -4,8 +4,8 @@ import os
 import asyncio
 
 # Authorized user IDs
-AUTHORIZED_USERS = [your_id]
-TARGET_USER_ID = your_id
+AUTHORIZED_USERS = [your_TG_id]
+TARGET_USER_ID = your_TG_id
 COOKIES_STATUS_FILE = "cookies_status.txt"
 LAST_STATUS = None
 GRADE_SELECTION = {}
@@ -36,7 +36,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = main_menu_keyboard()
     await update.message.reply_text("Выберите день недели:", reply_markup=reply_markup)
 
-# Callback handler for button clicks
+# Callback handler for button clicks (Homework selection)
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -75,11 +75,23 @@ async def rem(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     await update.message.reply_text(f"Домашнее задание для {day} обновлено.")
 
+# Help command handler
+async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    help_text = (
+        "Вот доступные команды:\n\n"
+        "/start - Начать взаимодействие с ботом. Открыть выбор дней недели с домашкой.\n"
+        "/rem <день недели> <текст> - Обновить домашнее задание для конкретного дня недели. (Только кого добавил, просить у Эрика)\n"
+        "/calc - Начать калькулятор для подсчёта среднего балла по оценкам.\n"
+        "/help - Показать описание всех команд."
+    )
+    await update.message.reply_text(help_text)
+
 # Grade calculator command
 async def calc(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
-    GRADE_SELECTION[user_id] = []
-    await update.message.reply_text("Выберите оценки:\n\nСредний балл: 0.00", reply_markup=grade_keyboard(user_id))
+    GRADE_SELECTION[user_id] = []  # Reset the grades when /calc is invoked
+    # Send initial message with the empty grades list
+    await update.message.reply_text("Выберите оценки:\n\nСредний балл: 0.00\n\nДобавленные оценки: Нет добавленных оценок.", reply_markup=grade_keyboard(user_id))
 
 # Function to generate grade selection keyboard
 def grade_keyboard(user_id):
@@ -98,11 +110,18 @@ async def grade_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         grade = int(query.data.split("_")[1])
         GRADE_SELECTION[user_id].append(grade)
     elif query.data == "clear_grades":
-        GRADE_SELECTION[user_id] = []
+        GRADE_SELECTION[user_id] = []  # Clear all grades
     
+    # Calculate the average grade
     avg_grade = sum(GRADE_SELECTION[user_id]) / len(GRADE_SELECTION[user_id]) if GRADE_SELECTION[user_id] else 0
+    # Format the added grades as a string
+    history = " ".join(map(str, GRADE_SELECTION[user_id])) if GRADE_SELECTION[user_id] else "Нет добавленных оценок."
     
-    await query.edit_message_text(f"Выберите оценки:\n\nСредний балл: {avg_grade:.2f}", reply_markup=grade_keyboard(user_id))
+    # Update the message with the grades and average score
+    await query.edit_message_text(
+        f"Выберите оценки:\n\nСредний балл: {avg_grade:.2f}\n\nДобавленные оценки: {history}",
+        reply_markup=grade_keyboard(user_id)
+    )
 
 # Monitor cookies_status.txt and notify user if status changes to false
 async def monitor_cookies_status(application):
@@ -120,11 +139,12 @@ async def monitor_cookies_status(application):
 
 # Main function to set up the bot
 def main():
-    application = ApplicationBuilder().token("BOT_TOKEN").build()
+    application = ApplicationBuilder().token("API_TGBOT").build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("rem", rem))
     application.add_handler(CommandHandler("calc", calc))
+    application.add_handler(CommandHandler("help", help))  # Add the help command handler
     application.add_handler(CallbackQueryHandler(button, pattern="^day_.*|main_menu$"))
     application.add_handler(CallbackQueryHandler(grade_selection, pattern="^grade_.*$|^clear_grades$"))
 
